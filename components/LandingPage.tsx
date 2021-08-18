@@ -7,16 +7,14 @@ const LandingPage = () => {
 			<Navigation />
 
 			<header className="left-32 top-44 absolute text-center">
-				<p className="text-title font-finger-paint lg:text-9xl md:text-8xl sm:text-6xl text-shadow-title ">
+				<p className="text-title font-finger-paint lg:text-9xl md:text-8xl sm:text-5xl text-shadow-title ">
 					Hanoi pho
 				</p>
 				<p className="font-noto-sans text-title top-8 relative lg:text-2xl md:text-xl sm:text-xl text-shadow-title">
 					Wietnamsko-chińska restauracja
 				</p>
 			</header>
-
-			 <div className="h-7 w-full bg-accent bg-emblem bg-contain fixed bottom-0">
-			</div> 
+			<div className="h-7 w-full bg-accent bg-emblem bg-contain absolute bottom-0"></div>
 		</div>
 	);
 };

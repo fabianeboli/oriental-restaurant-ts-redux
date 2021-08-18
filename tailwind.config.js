@@ -6,6 +6,7 @@ module.exports = {
 		extend: {
 			backgroundImage: theme => ({
 			 	'landing-page': "url('/images/landingPage.jpg')",
+				'landing-page-w-background': "url('/images/landingPageWBackground.jpg')",
 				'tile-background': "url('/images/tile_background.png')",
 				'emblem': "url('/images/emblem.svg')"
 			}),

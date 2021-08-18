@@ -1,10 +1,17 @@
 import React from "react";
 
-const Navigation = () => {
+interface INavigation {
+	isLogoVisible: boolean;
+}
+
+const Navigation = ({ isLogoVisible = true}: INavigation) => {
 	return (
 		<>
-			<nav className="">
-				<ul className="flex justify-end font-finger-paint text-nav text-4xl py-5">
+			<nav className="flex justify-between flex-row-reverse py-5 lg:text-5xl md:text-4xl sm:text-3xl">
+				
+				
+
+				<ul className="flex justify-end font-finger-paint text-nav">
 					<li className="mr-5 hover:text-accent duration-500">
 						<a href="#">Menu</a>
 					</li>
@@ -12,6 +19,15 @@ const Navigation = () => {
 						<a href="#">Contact</a>
 					</li>
 				</ul>
+
+				{isLogoVisible && (
+					<>
+						<h4 className="text-accent font-finger-paint ">
+							Hanoi pho
+						</h4>
+					</>
+				)}
+
 			</nav>
 		</>
 	);
