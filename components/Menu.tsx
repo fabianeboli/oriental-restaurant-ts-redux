@@ -1,11 +1,9 @@
 import React from "react";
-import Navigation from "./Navigation.tsx";
 
 const Menu = () => {
 	return (
 		<div className="bg-tile-background">
-			<Navigation isLogoVisible />
-			<div className="flex justify-center text-center mt-10">
+			<main className="flex justify-center text-center mt-10">
 				<div className="mr-10">
 					<p className="font-lato tracking-wide text-6xl border-b-2 border-secondary pb-3 border-opacity-25 w-50">
 						MENU
@@ -40,7 +38,7 @@ const Menu = () => {
 					</div>
 				</div>
 
-			</div>
+			</main>
 			<div className="h-7 w-full bg-accent bg-emblem bg-contain relative bottom-0 mt-20"></div>
 
 		</div>

@@ -4,10 +4,10 @@ interface INavigation {
 	isLogoVisible: boolean;
 }
 
-const Navigation = ({ isLogoVisible = true}: INavigation) => {
+const Navigation = ({ isLogoVisible = false}: INavigation) => {
 	return (
 		<>
-			<nav className="flex justify-between flex-row-reverse py-5 lg:text-5xl md:text-4xl sm:text-3xl">
+			<nav className="flex justify-between flex-row-reverse py-5 lg:text-5xl md:text-4xl sm:text-3xl sticky top-0">
 				
 				
 

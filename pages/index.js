@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Contact from "../components/Contact.tsx";
 import LandingPage from "../components/LandingPage.tsx";
 import Menu from "../components/Menu.tsx";
 
@@ -7,6 +8,7 @@ export default function Home() {
 		<>
 			<LandingPage />
 			<Menu />
+			<Contact />
 		</>
 
 		// <div className="flex flex-col items-center justify-center min-h-screen py-2">
