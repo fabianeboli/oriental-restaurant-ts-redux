@@ -1,7 +1,7 @@
 import { faHome, faPhoneAlt, faTty } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import Address from "./Address.tsx";
-import MapNoSSR from "./MapNoSSR.tsx";
+import Address from "../Contact/Address.tsx";
+import MapNoSSR from "../Contact/Map/MapNoSSR.tsx";
 
 const Contact = () => {
 	return (
@@ -15,7 +15,7 @@ const Contact = () => {
 				<Address icon={faHome} text="ul. piłsudzkiego 36/38" />
 			</div>
 			<div className="m-5">
-			<MapNoSSR />
+				<MapNoSSR />
 			</div>
 		</div>
 	);

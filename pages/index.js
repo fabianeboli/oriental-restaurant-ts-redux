@@ -1,14 +1,20 @@
 import Head from "next/head";
-import Contact from "../components/Contact.tsx";
+import Contact from "../components/Contact/Contact.tsx";
 import LandingPage from "../components/LandingPage.tsx";
 import Menu from "../components/Menu.tsx";
-
+import SideDrawer from "../components/SideDrawer/SideDrawer.tsx";
+import Navigation from "../components/Navigation.tsx";
 export default function Home() {
+	
+
+
 	return (
 		<>
+			{/* <Navigation /> */}
 			<LandingPage />
 			<Menu />
 			<Contact />
+			{/* <SideDrawer /> */}
 		</>
 
 		// <div className="flex flex-col items-center justify-center min-h-screen py-2">

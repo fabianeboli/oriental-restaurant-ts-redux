@@ -1,10 +1,12 @@
 import React from "react";
+import SideDrawer from "./SideDrawer/SideDrawer.tsx";
 
 const Menu = () => {
 	return (
 		<div className="bg-tile-background">
 			<main className="flex justify-center text-center mt-10">
 				<div className="mr-10">
+				<button onClick={() => <SideDrawer/>} ></button>
 					<p className="font-lato tracking-wide text-6xl border-b-2 border-secondary pb-3 border-opacity-25 w-50">
 						MENU
 					</p>
@@ -23,7 +25,7 @@ const Menu = () => {
 				</div>
 
 				<div className="flex flex-col">
-					<h3 className="bg-accent px-40 py-1 rounded font-noto-sans font-bold text-xl text-white">
+					<h3 className="bg-accent md:px-40 sm:px-20 px-0 py-1 rounded font-noto-sans font-bold text-xl text-white">
 						Kurczak
 					</h3>
 
@@ -37,10 +39,8 @@ const Menu = () => {
 						<p>15,00</p>
 					</div>
 				</div>
-
 			</main>
 			<div className="h-7 w-full bg-accent bg-emblem bg-contain relative bottom-0 mt-20"></div>
-
 		</div>
 	);
 };

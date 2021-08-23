@@ -1,18 +1,27 @@
+import { faBars, faCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { useState } from "react";
+import SideDrawer from "./SideDrawer/SideDrawer.tsx";
 
 interface INavigation {
-	isLogoVisible: boolean;
+	isMobile: boolean;
 }
 
-const Navigation = ({ isLogoVisible = false}: INavigation) => {
+const Navigation = ({ isMobile = true }: INavigation) => {
+	const [toggle, setToggle] = useState<boolean>(false);
+	
+	const toggleState = (): boolean => {
+		setToggle(!toggle);
+		return toggle;
+	}
+
 	return (
 		<>
-			<nav className="flex justify-between flex-row-reverse py-5 lg:text-5xl md:text-4xl sm:text-3xl sticky top-0">
-				
-				
-
-				<ul className="flex justify-end font-finger-paint text-nav">
-					<li className="mr-5 hover:text-accent duration-500">
+			<nav className="flex justify-between flex-row-reverse py-5 lg:text-7xl md:text-6xl text-4xl sticky z-10  top-0">
+			<SideDrawer toggle={toggle} setToggle={toggleState}/>
+				<ul className="flex justify-end font-finger-paint text-nav text-shadow-title">
+					<li className="mr-10 hover:text-accent duration-500">
 						<a href="#">Menu</a>
 					</li>
 					<li className="mr-5 hover:text-accent duration-500">
@@ -20,14 +29,25 @@ const Navigation = ({ isLogoVisible = false}: INavigation) => {
 					</li>
 				</ul>
 
-				{isLogoVisible && (
+				{isMobile && (
 					<>
-						<h4 className="text-accent font-finger-paint ">
-							Hanoi pho
-						</h4>
+						<button
+							onClick={() => setToggle(!toggle)}	
+							className="fa-layers fa-fw"
+						>
+							<FontAwesomeIcon
+								icon={faCircle}
+								transform="grow-1"
+								color="#222418"
+							/>
+							<FontAwesomeIcon
+								icon={faBars}
+								transform="shrink-5"
+								color="#c42e15"
+							/>
+						</button>
 					</>
 				)}
-
 			</nav>
 		</>
 	);

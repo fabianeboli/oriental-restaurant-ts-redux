@@ -22,7 +22,12 @@ module.exports = {
 				'noto-sans': "Noto Sans",
 				"lato": "Lato",
 				"finger-paint": "Finger Paint"
+			},
+			fontSize: {
+				'10xl': '10rem',
+				'11xl': '12rem'
 			}
+			
 		},
 	},
 	variants: {
