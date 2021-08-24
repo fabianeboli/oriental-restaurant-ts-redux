@@ -1,53 +1,36 @@
 import { faBars, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { useState } from "react";
-import SideDrawer from "./SideDrawer/SideDrawer.tsx";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleSideDrawer } from "../reducers/SideDrawer.ts";
 
 interface INavigation {
 	isMobile: boolean;
 }
 
 const Navigation = ({ isMobile = true }: INavigation) => {
-	const [toggle, setToggle] = useState<boolean>(false);
-	
-	const toggleState = (): boolean => {
-		setToggle(!toggle);
-		return toggle;
-	}
+	const dispatch = useDispatch()
+
 
 	return (
 		<>
-			<nav className="flex justify-between flex-row-reverse py-5 lg:text-7xl md:text-6xl text-4xl sticky z-10  top-0">
-			<SideDrawer toggle={toggle} setToggle={toggleState}/>
+			<nav className="flex justify-between flex-row py-5 lg:text-7xl md:text-6xl text-4xl top-0 right-0 fixed">
 				<ul className="flex justify-end font-finger-paint text-nav text-shadow-title">
 					<li className="mr-10 hover:text-accent duration-500">
-						<a href="#">Menu</a>
+						<a href="#Menu">Menu</a>
 					</li>
 					<li className="mr-5 hover:text-accent duration-500">
-						<a href="#">Contact</a>
+						<a href="#Contact">Kontakt</a>
 					</li>
 				</ul>
 
-				{isMobile && (
-					<>
-						<button
-							onClick={() => setToggle(!toggle)}	
-							className="fa-layers fa-fw"
-						>
-							<FontAwesomeIcon
-								icon={faCircle}
-								transform="grow-1"
-								color="#222418"
-							/>
-							<FontAwesomeIcon
-								icon={faBars}
-								transform="shrink-5"
-								color="#c42e15"
-							/>
-						</button>
-					</>
-				)}
+				<button
+					className="fa-layers fa-fw visible md:hidden"
+					onClick={() => dispatch(toggleSideDrawer)}
+				>
+					<FontAwesomeIcon icon={faCircle} transform="grow-1" color="#222418" />
+					<FontAwesomeIcon icon={faBars} transform="shrink-5" color="#c42e15" />
+				</button>
 			</nav>
 		</>
 	);

@@ -1,0 +1,234 @@
+{
+	"menu": {
+		"category": [
+			{
+				"name": "Kurczak",
+				"dishes": [
+					{
+						"name": "słodko-kwaśny",
+						"price": 15.0
+					},
+					{
+						"name": "pikantny",
+						"price": 15.5
+					},
+					{
+						"name": "zielone curry",
+						"price": 16.2
+					},
+					{
+						"name": "czerwony curry",
+						"price": 16.2
+					},
+					{
+						"name": "w orzechach",
+						"price": 16.0
+					},
+					{
+						"name": "słodko-kwaśny",
+						"price": 17.0
+					},
+					{
+						"name": "pikantny",
+						"price": 18.5
+					},
+					{
+						"name": "zielone curry",
+						"price": 17.2
+					},
+					{
+						"name": "czerwony curry",
+						"price": 17.2
+					},
+					{
+						"name": "w orzechach",
+						"price": 17.0
+					},
+					{
+						"name": "słodko-kwaśny",
+						"price": 17.0
+					},
+					{
+						"name": "pikantny",
+						"price": 18.5
+					},
+					{
+						"name": "zielone curry",
+						"price": 17.2
+					},
+					{
+						"name": "czerwony curry",
+						"price": 17.2
+					},
+					{
+						"name": "w orzechach",
+						"price": 17.0
+					},
+					{
+						"name": "słodko-kwaśny",
+						"price": 17.0
+					},
+					{
+						"name": "pikantny",
+						"price": 18.5
+					},
+					{
+						"name": "zielone curry",
+						"price": 17.2
+					},
+					{
+						"name": "czerwony curry",
+						"price": 17.2
+					},
+					{
+						"name": "w orzechach",
+						"price": 17.0
+					},
+					{
+						"name": "słodko-kwaśny",
+						"price": 17.0
+					},
+					{
+						"name": "pikantny",
+						"price": 18.5
+					},
+					{
+						"name": "zielone curry",
+						"price": 17.2
+					},
+					{
+						"name": "czerwony curry",
+						"price": 17.2
+					},
+					{
+						"name": "w orzechach",
+						"price": 17.0
+					}
+				]
+			},
+			{
+				"name": "Kaczka",
+				"dishes": [
+					{
+						"name": "słodko-kwaśny",
+						"price": 17.0
+					},
+					{
+						"name": "pikantny",
+						"price": 18.5
+					},
+					{
+						"name": "zielone curry",
+						"price": 17.2
+					},
+					{
+						"name": "czerwony curry",
+						"price": 17.2
+					},
+					{
+						"name": "w orzechach",
+						"price": 17.0
+					},
+					{
+						"name": "słodko-kwaśny",
+						"price": 17.0
+					},
+					{
+						"name": "pikantny",
+						"price": 18.5
+					},
+					{
+						"name": "zielone curry",
+						"price": 17.2
+					},
+					{
+						"name": "czerwony curry",
+						"price": 17.2
+					},
+					{
+						"name": "w orzechach",
+						"price": 17.0
+					},
+					{
+						"name": "słodko-kwaśny",
+						"price": 17.0
+					},
+					{
+						"name": "pikantny",
+						"price": 18.5
+					},
+					{
+						"name": "zielone curry",
+						"price": 17.2
+					},
+					{
+						"name": "czerwony curry",
+						"price": 17.2
+					},
+					{
+						"name": "w orzechach",
+						"price": 17.0
+					}
+				]
+			},
+			{
+				"name": "Wieprzowina",
+				"dishes": [
+					{
+						"name": "słodko-kwaśny",
+						"price": 17.0
+					},
+					{
+						"name": "pikantny",
+						"price": 18.5
+					},
+					{
+						"name": "zielone curry",
+						"price": 17.2
+					},
+					{
+						"name": "czerwony curry",
+						"price": 17.2
+					},
+					{
+						"name": "w orzechach",
+						"price": 17.0
+					},
+					{
+						"name": "słodko-kwaśny",
+						"price": 17.0
+					},
+					{
+						"name": "pikantny",
+						"price": 18.5
+					},
+					{
+						"name": "zielone curry",
+						"price": 17.2
+					},
+					{
+						"name": "czerwony curry",
+						"price": 17.2
+					},
+					{
+						"name": "w orzechach",
+						"price": 17.0
+					}
+				]
+			},
+			{
+				"name": "Makaron hanoi",
+				"dishes": [
+					{
+						"name": "klasyczny",
+						"price": 19.0
+					},
+					{
+						"name": "z orzechami",
+						"price": 20.5
+					}
+				]
+			}
+		]
+	}
+}

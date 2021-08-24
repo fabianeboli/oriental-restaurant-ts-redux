@@ -1,47 +1,57 @@
 import React from "react";
-import SideDrawer from "./SideDrawer/SideDrawer.tsx";
+import { useState } from "react";
+import menuPl from "../model/menu_pl.json";
 
 const Menu = () => {
+	const menu = menuPl.menu;
+	const [selectedCategory, setSelectedCategory] = useState<string>(
+		menu.category[0].name
+	);
+
 	return (
-		<div className="bg-tile-background">
-			<main className="flex justify-center text-center mt-10">
-				<div className="mr-10">
-				<button onClick={() => <SideDrawer/>} ></button>
-					<p className="font-lato tracking-wide text-6xl border-b-2 border-secondary pb-3 border-opacity-25 w-50">
-						MENU
-					</p>
-					<ul>
-						<li className="hover:text-accent active:text-accent text-nav cursor-pointer font-noto-sans font-bold text-xl my-1">
-							Kurczak
-						</li>
-
-						<li className="hover:text-accent active:text-accent text-nav cursor-pointer font-noto-sans font-bold text-xl my-1">
-							Makaron Hanoi
-						</li>
-						<li className="hover:text-accent active:text-accent text-nav cursor-pointer font-noto-sans font-bold text-xl my-1">
-							Kaczka
-						</li>
-					</ul>
-				</div>
-
-				<div className="flex flex-col">
-					<h3 className="bg-accent md:px-40 sm:px-20 px-0 py-1 rounded font-noto-sans font-bold text-xl text-white">
-						Kurczak
-					</h3>
-
-					<div className="flex justify-between my-1 text-lg font-bold">
-						<p>słodko-kwaśny</p>
-						<p>15,00</p>
+		<>
+			<div className="bg-tile-background bg-repeat bg-contain py-24">
+				<main className="flex justify-center text-center mt-10 flex-none">
+					<div className="relative bottom-10 mr-20 md:visible hidden">
+						<p
+							id="Menu"
+							className="font-lato tracking-widest text-6xl font-bold border-b-2 border-tertiary pb-3 border-opacity-25 w-52 "
+						>
+							MENU
+						</p>
+						<ul>
+							{menu.category.map(({ name }) => (
+								<li
+									onClick={() => setSelectedCategory(name)}
+									className="hover:text-accent active:text-accent focus:text-accent text-black cursor-pointer font-noto-sans font-bold text-xl mb-2"
+								>
+									{name}
+								</li>
+							))}
+						</ul>
 					</div>
 
-					<div className="flex justify-between my-1 text-lg font-bold">
-						<p>słodko-kwaśny</p>
-						<p>15,00</p>
+					<div className="flex flex-col">
+						<div className="bg-accent w-full md:px-44 sm:px-20 px-14 py-1 rounded font-noto-sans font-bold text-xl text-white">
+							<p className=" ">{selectedCategory}</p>
+						</div>
+						<ul>
+							{menu.category
+								.filter(({ name }) => name === selectedCategory)
+								.map(({ dishes }) =>
+									dishes.map(({ name, price }) => (
+										<li className="flex justify-between my-4 md:text-lg text-sm font-bold py-1 ">
+											<p>{name}</p>
+											<p>{price.toFixed(2)}PLN</p>
+										</li>
+									))
+								)}
+						</ul>
 					</div>
-				</div>
-			</main>
-			<div className="h-7 w-full bg-accent bg-emblem bg-contain relative bottom-0 mt-20"></div>
-		</div>
+				</main>
+			</div>
+			<div className="h-7 w-full bg-accent bg-emblem bg-contain relative bottom-0"></div>
+		</>
 	);
 };
 
