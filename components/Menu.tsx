@@ -1,34 +1,35 @@
 import React from "react";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import menuPl from "../language/menu_pl.json";
 import menuEn from "../language/menu_en.json";
 import { IReducers } from "../reducers/reducers";
-import { Language } from "../reducers/Language.ts";
+import { Language } from "../reducers/language.ts";
+import { selectCategory } from "../reducers/menu.ts";
 
 const Menu = () => {
 	const { language } = useSelector((state: IReducers) => state.language);
+	const { selectedCategory } = useSelector((state: IReducers) => state.menu);
+	console.log(selectedCategory);
+	const dispatch = useDispatch();
 
-	const translation = language === Language.polish ? menuPl.menu : menuEn.menu;
-	const [selectedCategory, setSelectedCategory] = useState<string>(
-		translation.category[0].name
-	);
+	const translation = language === Language.polish ? menuPl : menuEn;
+	// const [selectedCategory, setSelectedCategory] = useState<string>(
+	// 	translation.category[0].name
+	// );
 
 	return (
 		<>
-			<div className="bg-tile-background bg-repeat bg-contain py-24">
+			<div id="Menu" className="bg-tile-background bg-repeat bg-contain py-24">
 				<main className="flex justify-center text-center mt-10 flex-none">
 					<section className="relative bottom-10 mr-20 md:block hidden ">
-						<p
-							id="Menu"
-							className="font-lato tracking-widest text-7xl font-bold border-b-2 border-tertiary pb-3 border-opacity-25 w-96 "
-						>
+						<p className="font-lato tracking-widest text-7xl font-bold border-b-2 border-tertiary pb-3 border-opacity-25 w-96 ">
 							MENU
 						</p>
 						<ul>
 							{translation.category.map(({ name }) => (
 								<li
-									onClick={() => setSelectedCategory(name)}
+									onClick={() => dispatch(selectCategory(name))}
 									className="hover:text-accent active:text-accent focus:text-accent text-black cursor-pointer font-noto-sans font-bold text-2xl mb-2"
 								>
 									{name}

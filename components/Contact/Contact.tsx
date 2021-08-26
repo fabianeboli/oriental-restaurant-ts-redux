@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { useSelector } from "react-redux";
-import { Language } from "../../reducers/Language.ts";
+import { Language } from "../../reducers/language.ts";
 import { IReducers } from "../../reducers/reducers.ts";
 import Address from "../Contact/Address.tsx";
 import MapNoSSR from "../Contact/Map/MapNoSSR.tsx";
@@ -19,11 +19,11 @@ const Contact = () => {
 	const translation = Language.polish === language ? ContactPl : ContactEn;
 
 	return (
-		<div className="flex justify-around bg-primary text-tertiary py-24">
+		<div className="flex md:flex-row flex-col justify-around bg-primary text-tertiary py-24">
 			<div className="relative bottom-5">
 				<h2
 					id="Contact"
-					className="xl:text-8xl lg:text-7xl md:text-6xl sm:text-5xl tracking-wide text-center pb-4"
+					className="xl:text-8xl lg:text-7xl md:text-6xl text-2xl tracking-wide text-center pb-4"
 				>
 					{translation.visit}
 				</h2>

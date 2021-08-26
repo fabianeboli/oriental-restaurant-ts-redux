@@ -1,15 +1,18 @@
 import { combineReducers } from "redux";
-import Language from "./Language.ts";
-import SideDrawer from "./SideDrawer.ts";
+import language from "./language.ts";
+import menu from "./menu.ts";
+import sideDrawer from "./sideDrawer.ts";
 
 export interface IReducers {
 	language: any;
 	sideDrawer: any;
+	menu: any;
 }
 
 const reducers = combineReducers({
-	language: Language,
-	sideDrawer: SideDrawer,
+	language,
+	sideDrawer,
+	menu,
 });
 
 export default reducers;

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { IReducers } from "../reducers/reducers";
 import LandingPagePl from "../language/landingPage_pl.json";
 import LandingPageEn from "../language/landingPage_en.json";
-import { Language } from "../reducers/Language.ts";
+import { Language } from "../reducers/language.ts";
 
 const LandingPage = () => {
 	const { language } = useSelector((state: IReducers) => state.language);
@@ -21,7 +21,7 @@ const LandingPage = () => {
 					{translation.subtitle}
 				</p>
 			</header>
-			<div className="h-7 w-full bg-accent bg-emblem bg-contain absolute z-0 bottom-0"></div>
+			<div className="h-7 w-full bg-accent bg-emblem bg-contain absolute  bottom-0"></div>
 		</div>
 	);
 };
