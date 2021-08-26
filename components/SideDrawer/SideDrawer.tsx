@@ -15,7 +15,6 @@ const SideDrawer = ({
 	toggleSelector,
 	dispatch,
 }: ISideDrawer) => {
-	console.log(title, children, toggleSelector, dispatch);
 
 	const hideSideDrawer = toggleSelector
 		? "visible transition duration-700 ease-in-out"
@@ -24,7 +23,7 @@ const SideDrawer = ({
 	return (
 		<Overlay visible={toggleSelector} dispatch={dispatch}>
 			<aside
-				className={`bg-gray-50 text-xl text-center absolute z-10  h-full w-1/2 ${hideSideDrawer} bg-white`}
+				className={`bg-gray-50 text-xl text-center absolute z-10  h-full md:w-2/12 w-1/2 ${hideSideDrawer} bg-white`}
 			>
 				<button>
 					<h4 className="flex justify-around text-accent text-center tracking-wider text-4xl font-lato font-bold border-b-2 py-7 border-secondary border-opacity-40 w-100 mx-auto ">

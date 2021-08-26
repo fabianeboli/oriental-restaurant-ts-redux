@@ -1,11 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import menuPl from "../model/menu_pl.json";
+import { useSelector } from "react-redux";
+import menuPl from "../language/menu_pl.json";
+import menuEn from "../language/menu_en.json";
+import { IReducers } from "../reducers/reducers";
+import { Language } from "../reducers/Language.ts";
 
 const Menu = () => {
-	const menu = menuPl.menu;
+	const { language } = useSelector((state: IReducers) => state.language);
+
+	const translation = language === Language.polish ? menuPl.menu : menuEn.menu;
 	const [selectedCategory, setSelectedCategory] = useState<string>(
-		menu.category[0].name
+		translation.category[0].name
 	);
 
 	return (
@@ -20,7 +26,7 @@ const Menu = () => {
 							MENU
 						</p>
 						<ul>
-							{menu.category.map(({ name }) => (
+							{translation.category.map(({ name }) => (
 								<li
 									onClick={() => setSelectedCategory(name)}
 									className="hover:text-accent active:text-accent focus:text-accent text-black cursor-pointer font-noto-sans font-bold text-2xl mb-2"
@@ -36,7 +42,7 @@ const Menu = () => {
 							<p className=" ">{selectedCategory}</p>
 						</div>
 						<ul>
-							{menu.category
+							{translation.category
 								.filter(({ name }) => name === selectedCategory)
 								.map(({ dishes }) =>
 									dishes.map(({ name, price }) => (

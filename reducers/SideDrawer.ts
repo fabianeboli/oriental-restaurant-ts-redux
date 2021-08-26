@@ -24,14 +24,12 @@ const initialState: IState = {
 const reducer = (state = initialState, { type }) => {
 	switch (type) {
 		case actTypes.toggleSideMenu:
-			console.log(state, type);
 			return {
 				...state,
 				sideLanguage: false,
 				sideMenu: !state.sideMenu,
 			};
 		case actTypes.toggleSideLanguage:
-			console.log(state, type)
 			return {
 				...state,
 				sideLanguage: !state.sideLanguage,

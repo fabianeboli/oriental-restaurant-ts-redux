@@ -1,4 +1,4 @@
-enum Language {
+export enum Language {
 	polish = "pl",
 	english = "en",
 }
@@ -8,16 +8,12 @@ export enum actTypes {
 	toEnglish = "TO_ENGLISH",
 }
 
-export const toPolish = () => {
-	return {
-		type: actTypes.toPolish,
-	};
+export const toPolish = {
+	type: actTypes.toPolish,
 };
 
-export const toEnglish = () => {
-	return {
-		type: actTypes.toEnglish,
-	};
+export const toEnglish = {
+	type: actTypes.toEnglish,
 };
 
 interface ILanguage {
@@ -25,22 +21,24 @@ interface ILanguage {
 }
 
 const initialState: ILanguage = {
-	language: "polish",
+	language: Language.english,
 };
 
-export default (state = initialState, { type }) => {
+const reducer = (state = initialState, { type }) => {
 	switch (type) {
 		case actTypes.toPolish:
 			return {
-				...state, 
-				language: Language.polish
-			}
+				...state,
+				language: Language.polish,
+			};
 		case actTypes.toEnglish:
 			return {
 				...state,
-				Language: Language.english
-			}
+				language: Language.english,
+			};
 		default:
 			return state;
 	}
 };
+
+export default reducer;
