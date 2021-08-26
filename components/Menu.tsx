@@ -12,10 +12,10 @@ const Menu = () => {
 		<>
 			<div className="bg-tile-background bg-repeat bg-contain py-24">
 				<main className="flex justify-center text-center mt-10 flex-none">
-					<div className="relative bottom-10 mr-20 md:visible hidden">
+					<section className="relative bottom-10 mr-20 md:block hidden ">
 						<p
 							id="Menu"
-							className="font-lato tracking-widest text-6xl font-bold border-b-2 border-tertiary pb-3 border-opacity-25 w-52 "
+							className="font-lato tracking-widest text-7xl font-bold border-b-2 border-tertiary pb-3 border-opacity-25 w-96 "
 						>
 							MENU
 						</p>
@@ -23,13 +23,13 @@ const Menu = () => {
 							{menu.category.map(({ name }) => (
 								<li
 									onClick={() => setSelectedCategory(name)}
-									className="hover:text-accent active:text-accent focus:text-accent text-black cursor-pointer font-noto-sans font-bold text-xl mb-2"
+									className="hover:text-accent active:text-accent focus:text-accent text-black cursor-pointer font-noto-sans font-bold text-2xl mb-2"
 								>
 									{name}
 								</li>
 							))}
 						</ul>
-					</div>
+					</section>
 
 					<div className="flex flex-col">
 						<div className="bg-accent w-full md:px-44 sm:px-20 px-14 py-1 rounded font-noto-sans font-bold text-xl text-white">

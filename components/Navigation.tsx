@@ -1,16 +1,18 @@
-import { faBars, faCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+	faBars,
+	faCircle,
+	faLanguage,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleSideDrawer } from "../reducers/SideDrawer.ts";
+import { useDispatch } from "react-redux";
+import { toggleSideMenu } from "../reducers/SideDrawer.ts";
+import { toggleSideLanguage } from "../reducers/SideDrawer.ts";
 
-interface INavigation {
-	isMobile: boolean;
-}
 
-const Navigation = ({ isMobile = true }: INavigation) => {
-	const dispatch = useDispatch()
 
+const Navigation = () => {
+	const dispatch = useDispatch();
 
 	return (
 		<>
@@ -26,10 +28,21 @@ const Navigation = ({ isMobile = true }: INavigation) => {
 
 				<button
 					className="fa-layers fa-fw visible md:hidden"
-					onClick={() => dispatch(toggleSideDrawer)}
+					onClick={() => dispatch(toggleSideMenu)}
 				>
 					<FontAwesomeIcon icon={faCircle} transform="grow-1" color="#222418" />
 					<FontAwesomeIcon icon={faBars} transform="shrink-5" color="#c42e15" />
+				</button>
+				<button
+					className="fa-layers fa-fw"
+					onClick={() => dispatch(toggleSideLanguage)}
+				>
+					<FontAwesomeIcon icon={faCircle} transform="grow-1" color="#222418" />
+					<FontAwesomeIcon
+						icon={faLanguage}
+						transform="shrink-7"
+						color="#c42e15"
+					/>
 				</button>
 			</nav>
 		</>

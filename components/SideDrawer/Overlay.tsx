@@ -4,17 +4,17 @@ import { toggleSideDrawer } from "../../reducers/SideDrawer.ts";
 
 interface IOverlay {
 	children: React.ReactNode;
+	visible: boolean;
+	dispatch: any;
 }
 
-const Overlay = ({ children }: IOverlay) => {
-	const { isSideDrawerVisible } = useSelector((state: any) => state.sideDrawer);
-	const dispatch = useDispatch();
-	const isVisible = isSideDrawerVisible ? "visible" : "hidden";
+const Overlay = ({ children, visible, dispatch }: IOverlay) => {
+	const isVisible = visible ? "visible" : "hidden";
 
 	return (
 		<div
 			className={`bg-gray-700 bg-opacity-60 z-9 fixed left-0 top-0 w-full h-full ${isVisible}`}
-			onClick={() => dispatch(toggleSideDrawer)}
+			onClick={dispatch}
 		>
 			{children}
 		</div>

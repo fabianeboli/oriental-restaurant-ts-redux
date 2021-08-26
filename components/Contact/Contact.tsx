@@ -12,7 +12,7 @@ const Contact = () => {
 				</h2>
 				<Address icon={faPhoneAlt} text="123 123 123" />
 				<Address icon={faTty} text="0 123 123 123" />
-				<Address icon={faHome} text="ul. piłsudzkiego 36/38" />
+				<Address icon={faHome} text="ul. piłsudzkiego 36/38, Gdynia" />
 				<Address icon={faClock} text={"wt-sob 11-20\n niedz. 12-20"}/>
 			</div>
 			<div className="m-5">

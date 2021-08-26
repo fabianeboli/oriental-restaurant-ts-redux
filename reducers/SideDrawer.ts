@@ -1,27 +1,45 @@
 enum actTypes {
-	toggleSideDrawer = "TOGGLE_SIDEDRAWER",
+	toggleSideMenu = "TOGGLE_SIDEMENU",
+	toggleSideLanguage = "TOGGLE_SIDELANGUAGE",
 }
 
 interface IState {
-	isSideDrawerVisible: false;
+	sideMenu: boolean;
+	sideLanguage: boolean;
 }
 
-export const toggleSideDrawer = {
-	type: actTypes.toggleSideDrawer,
+export const toggleSideMenu = {
+	type: actTypes.toggleSideMenu,
+};
+
+export const toggleSideLanguage = {
+	type: actTypes.toggleSideLanguage,
 };
 
 const initialState: IState = {
-	isSideDrawerVisible: false,
+	sideMenu: false,
+	sideLanguage: false,
 };
 
-export default (state = initialState, { type }) => {
+const reducer = (state = initialState, { type }) => {
 	switch (type) {
-		case actTypes.toggleSideDrawer:
+		case actTypes.toggleSideMenu:
+			console.log(state, type);
 			return {
-				...state, 
-				isSideDrawerVisible: !state.isSideDrawerVisible
-			}
+				...state,
+				sideLanguage: false,
+				sideMenu: !state.sideMenu,
+			};
+		case actTypes.toggleSideLanguage:
+			console.log(state, type)
+			return {
+				...state,
+				sideLanguage: !state.sideLanguage,
+				sideMenu: false,
+			};
 		default:
 			return state;
 	}
 };
+
+export default reducer;
