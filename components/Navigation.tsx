@@ -22,7 +22,7 @@ const Navigation = () => {
 
 	return (
 		<>
-			<nav className="bg-secondary flex justify-between flex-row py-3 md:text-4xl text-2xl top-0 right-0 w-screen z-10 shadow-md fixed">
+			<nav className="bg-primary flex justify-between items-center flex-row py-3 md:text-3xl text-2xl top-0 right-0 w-screen z-10 shadow-md fixed">
 				<ul className="flex justify-end font-lato text-nav ">
 					<li className="mx-10 hover:text-accent duration-500">
 						<a href="#Menu">{translation.menu}</a>
@@ -33,20 +33,18 @@ const Navigation = () => {
 				</ul>
 
 				<button
-					className="fa-layers fa-fw visible md:hidden"
+					className="fa-layers fa-fw visible md:hidden hover:bg-nav duration-500 rounded-md p-5"
 					onClick={() => dispatch(toggleSideMenu)}
 				>
-					<FontAwesomeIcon icon={faCircle} transform="grow-1" color="#222418" />
 					<FontAwesomeIcon icon={faBars} transform="shrink-5" color="#c42e15" />
 				</button>
 				<button
-					className="fa-layers fa-fw mr-5"
+					className="fa-layers fa-fw mr-5 hover:bg-nav duration-500 rounded-md p-5"
 					onClick={() => dispatch(toggleSideLanguage)}
 				>
-					<FontAwesomeIcon icon={faCircle} transform="grow-1" color="#222418" />
 					<FontAwesomeIcon
 						icon={faLanguage}
-						transform="shrink-7"
+						transform="shrink-3"
 						color="#c42e15"
 					/>
 				</button>

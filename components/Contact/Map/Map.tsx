@@ -9,7 +9,7 @@ const Map = () => {
 			center={[54.50895, 18.54312]}
 			zoom={16}
 			scrollWheelZoom={true}
-			style={{ height: "24rem", width: "40vw", borderRadius: "4px" }}
+			className="sm:h-30rem h-96 sm:w-40vw w-80 mx-auto rounded-md"
 		>
 			<TileLayer
 				url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZmFiaWFuZTIxIiwiYSI6ImNrc2l1aDh1bjBkaHEydm5jZDl6OXc2OGoifQ.q4mphE4ijUOFW_Ad5TG3XQ`}

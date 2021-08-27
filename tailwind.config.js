@@ -28,6 +28,12 @@ module.exports = {
 				"10xl": "10rem",
 				"11xl": "12rem",
 			},
+			width: {
+				"40vw": "40vw"
+			},
+			height: {
+				"30rem": "30rem"
+			}
 		},
 	},
 	variants: {
