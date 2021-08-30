@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { v4 as uuid } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import menuPl from "../language/menu_pl.json";
 import menuEn from "../language/menu_en.json";
@@ -10,13 +10,9 @@ import { selectCategory } from "../reducers/menu.ts";
 const Menu = () => {
 	const { language } = useSelector((state: IReducers) => state.language);
 	const { selectedCategory } = useSelector((state: IReducers) => state.menu);
-	console.log(selectedCategory);
 	const dispatch = useDispatch();
 
 	const translation = language === Language.polish ? menuPl : menuEn;
-	// const [selectedCategory, setSelectedCategory] = useState<string>(
-	// 	translation.category[0].name
-	// );
 
 	return (
 		<>
@@ -29,30 +25,34 @@ const Menu = () => {
 						<ul>
 							{translation.category.map(({ name }) => (
 								<li
-									onClick={() => dispatch(selectCategory(name))}
-									className="hover:text-accent active:text-accent focus:text-accent text-black cursor-pointer font-noto-sans font-bold text-2xl mb-2"
+									key={uuid()}
+									className="duration-200 hover:text-accent active:text-accent focus:text-accent text-black cursor-pointer font-noto-sans font-bold text-2xl mb-2"
 								>
-									{name}
+									<a href={`#${name}`}>{name}</a>
 								</li>
 							))}
 						</ul>
 					</section>
 
 					<div className="flex flex-col">
-						<div className="bg-accent w-full md:px-44 sm:px-20 px-14 py-1 rounded font-noto-sans font-bold text-xl text-white">
+						{/* <div className="bg-accent  w-full md:px-44 sm:px-20 px-14 py-1 rounded font-noto-sans font-bold text-xl text-white">
 							<p className=" ">{selectedCategory}</p>
-						</div>
+						</div> */}
 						<ul>
-							{translation.category
-								.filter(({ name }) => name === selectedCategory)
-								.map(({ dishes }) =>
-									dishes.map(({ name, price }) => (
-										<li className="flex justify-between my-4 md:text-lg text-sm font-bold py-1 ">
+							{translation.category.map(({ name, dishes }) => (
+								<>
+									<li className="py-14" id={`${name}`}>{name}</li>
+									{dishes.map(({ name, price }) => (
+										<li
+											key={uuid()}
+											className="flex justify-between my-4 md:text-lg text-sm font-bold py-1 "
+										>
 											<p>{name}</p>
 											<p>{price.toFixed(2)}PLN</p>
 										</li>
-									))
-								)}
+									))}
+								</>
+							))}
 						</ul>
 					</div>
 				</main>

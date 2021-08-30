@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { useSelector } from "react-redux";
 import { IReducers } from "../reducers/reducers";
 import LandingPagePl from "../language/landingPage_pl.json";
@@ -12,7 +13,7 @@ const LandingPage = () => {
 		Language.polish === language ? LandingPagePl : LandingPageEn;
 
 	return (
-		<div className="w-full h-full bg-landing-page bg-cover bg-local ">
+		<div className="w-full h-full sm:bg-landing-page bg-landing-page-mobile bg-cover bg-local ">
 			<header className="md:left-32 md:top-64 md:absolute relative top-24 text-center">
 				<p className="text-title font-finger-paint xl:text-11xl lg:text-10xl md:text-9xl text-shadow-title text-6xl ">
 					{translation.title}

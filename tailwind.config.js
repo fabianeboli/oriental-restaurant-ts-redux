@@ -5,9 +5,8 @@ module.exports = {
 	theme: {
 		extend: {
 			backgroundImage: (theme) => ({
-				"landing-page": "url('/images/landingPage.jpg')",
-				"landing-page-w-background":
-					"url('/images/landingPageWBackground.jpg')",
+				"landing-page": "url('/images/desktop/landingPage-80.jpg')",
+				"landing-page-mobile": "url('/images/mobile/landingPage-mobile.jpg')",
 				"tile-background": "url('/images/tilesop10.png')",
 				emblem: "url('/images/emblem.svg')",
 			}),
@@ -29,11 +28,11 @@ module.exports = {
 				"11xl": "12rem",
 			},
 			width: {
-				"40vw": "40vw"
+				"40vw": "40vw",
 			},
 			height: {
-				"30rem": "30rem"
-			}
+				"30rem": "30rem",
+			},
 		},
 	},
 	variants: {
