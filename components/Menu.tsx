@@ -16,10 +16,10 @@ const Menu = () => {
 
 	return (
 		<>
-			<div id="Menu" className="bg-tile-background bg-repeat bg-contain py-24">
-				<main className="flex justify-center text-center mt-10 flex-none">
-					<section className="relative bottom-10 mr-20 md:block hidden ">
-						<p className="font-lato tracking-widest text-7xl font-bold border-b-2 border-tertiary pb-3 border-opacity-25 w-96 ">
+			<div id="Menu" className="bg-tile-background bg-repeat py-24">
+				<main className="flex items-start justify-center text-center mt-10 flex-none">
+					<section className="relative top-16 mr-20 md:sticky  md:block hidden ">
+						<p className="font-lato tracking-widest text-7xl font-bold  pb-3  w-96 ">
 							MENU
 						</p>
 						<ul>
@@ -35,19 +35,16 @@ const Menu = () => {
 					</section>
 
 					<div className="flex flex-col">
-						{/* <div className="bg-accent  w-full md:px-44 sm:px-20 px-14 py-1 rounded font-noto-sans font-bold text-xl text-white">
-							<p className=" ">{selectedCategory}</p>
-						</div> */}
 						<ul>
 							{translation.category.map(({ name, dishes }) => (
 								<>
-									<li className="py-14" id={`${name}`}>{name}</li>
+									<li className="bg-accent  w-full md:px-44 sm:px-20 px-14 py-1 rounded font-noto-sans font-bold text-xl text-white" id={`${name}`}>{name}</li>
 									{dishes.map(({ name, price }) => (
 										<li
 											key={uuid()}
-											className="flex justify-between my-4 md:text-lg text-sm font-bold py-1 "
+											className="flex items-center text-left justify-between my-4 md:text-lg text-sm font-bold px-3"
 										>
-											<p>{name}</p>
+											<p className="">{name}</p>
 											<p>{price.toFixed(2)}PLN</p>
 										</li>
 									))}

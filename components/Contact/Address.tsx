@@ -11,7 +11,7 @@ interface IAddress {
 
 const Address = ({ icon, text }: IAddress) => {
 	return (
-		<address className="flex whitespace-pre-wrap justify-items-center content-center items-center my-2 ml-14 lg:text-2xl sm:text-xl text-4xl py-2 w-52">
+		<address className="flex whitespace-pre justify-items-center content-center items-center my-2 sm:ml-14 ml-0 lg:text-2xl sm:text-xl text-xl py-2 w-52">
 			{" "}
 			<FontAwesomeIcon
 				icon={icon}

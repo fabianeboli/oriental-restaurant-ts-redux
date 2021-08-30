@@ -18,7 +18,7 @@ const SideDrawer = ({
 
 	const hideSideDrawer = toggleSelector
 		? "translate-x-0 "
-		: "-translate-x-52";
+		: "-translate-x-full ease-in-out";
 
 	return (
 		<Overlay visible={toggleSelector} dispatch={dispatch}>

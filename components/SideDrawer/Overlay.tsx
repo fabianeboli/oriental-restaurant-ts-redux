@@ -13,7 +13,7 @@ const Overlay = ({ children, visible, dispatch }: IOverlay) => {
 
 	return (
 		<div
-			className={`delay-100 duration-200 z-10 fixed left-0 top-0 w-full h-full ${isVisible}`}
+			className={`delay-100 duration-500 z-10 fixed left-0 top-0 w-full h-full ${isVisible}`}
 			onClick={dispatch}
 		>
 			{children}

@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-import {useState, useRef, useEffect} from 'react';
+import { useState, useRef, useEffect } from "react";
 import { createStore } from "redux";
 import Contact from "../components/Contact/Contact.tsx";
 import LandingPage from "../components/LandingPage.tsx";
@@ -14,7 +14,6 @@ const store = createStore(reducers);
 // !FIX category should automatically change when changing language
 // !TODO add animations
 // !TODO add SEO
-
 
 export default function Home() {
 	const [navBackground, setNavBackground] = useState(false);
@@ -37,14 +36,18 @@ export default function Home() {
 		<>
 			<Provider store={store}>
 				<Navbar
-					backgroundColor={navBackground ? "bg-primary shadow-md" : "transparent"}
+					backgroundColor={
+						navBackground ? "bg-primary shadow-md" : "transparent"
+					}
 					style={{ transition: "1s ease" }}
 				/>
-				<LandingPage />
-				<Menu />
-				<Contact />
-				<SideMenu />
-				<SideLanguage />
+				<>
+					<LandingPage />
+					<Menu />
+					<Contact />
+					<SideMenu />
+					<SideLanguage />
+				</>
 			</Provider>
 		</>
 	);
