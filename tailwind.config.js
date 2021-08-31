@@ -8,15 +8,17 @@ module.exports = {
 				"landing-page": "url('/images/desktop/landingPage-80.jpg')",
 				"landing-page-mobile": "url('/images/mobile/landingPage-mobile.jpg')",
 				"tile-background": "url('/images/tilesop10.png')",
-				emblem: "url('/images/emblem.svg')",
+				"emblem": "url('/images/emblem.svg')",
+				"onTheWay": "url('/images/onTheWay.svg')"
 			}),
 			colors: {
 				title: "#FFD41A",
-				nav: "#94AB76",
+				nav: "#7cb083",
 				accent: "#c42e15",
 				primary: "#282B1B",
 				secondary: "#525548",
 				tertiary: "#E2F4D1",
+				
 			},
 			fontFamily: {
 				"noto-sans": "Noto Sans",

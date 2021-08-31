@@ -2,7 +2,6 @@ import {
 	faClock,
 	faHome,
 	faPhoneAlt,
-	faShippingFast,
 	faTty,
 	faUmbrellaBeach,
 } from "@fortawesome/free-solid-svg-icons";
@@ -23,12 +22,12 @@ const Contact = () => {
 	const translation = Language.polish === language ? ContactPl : ContactEn;
 
 	return (
-		<section className="bg-primary text-tertiary">
+		<section className="bg-primary text-green-50">
 			<div className="flex md:flex-row flex-col justify-around  py-24">
 				<div className="relative bottom-5">
 					<h2
 						id="Contact"
-						className="xl:text-8xl lg:text-7xl md:text-6xl text-2xl tracking-wide text-center pb-4"
+						className="text-green-50 xl:text-8xl lg:text-7xl md:text-6xl text-2xl tracking-wider text-center pb-7"
 					>
 						{translation.visit}
 						<a href="https://www.facebook.com/hanoi.pho1970">
@@ -48,9 +47,45 @@ const Contact = () => {
 					<MapNoSSR />
 				</div>
 			</div>
-			<section className="mx-10 pb-14 text-right md:text-lg text-md">
-				<p className="py-5">{translation.delivery}</p>
-				<p>{translation.deliveryCost}</p>
+			<section className="flex md:flex-row justify-around items-center flex-col-reverse mx-10 pb-14 text-right md:text-lg text-md">
+				<div>
+					<img src="/images/desktop/OnTheWay.svg" alt="girl on the bike" />
+				</div>
+				<div>
+					<h3 className="text-green-50 text-bold text-center text-7xl tracking-wider">
+						{translation.delivery}
+					</h3>
+					<div className="flex justify-center my-10 text-center">
+						<div className="mr-10">
+							<h4 className="text-accent lg:text-5xl md:text-5xl text-xl font-bold font-lato pb-6 tracking-wide">
+								Gdynia
+							</h4>
+							<h5 className="font-bold text-white">
+								{translation.deliveryRequirementGdynia}
+							</h5>
+						</div>
+						<div>
+							<h4 className="text-accent lg:text-5xl md:text-5xl text-xl font-bold font-lato pb-6 tracking-wide">
+								Sopot
+							</h4>
+							<h5 className="font-bold text-white">
+								{translation.deliveryRequirementSopot}
+							</h5>
+						</div>
+					</div>
+					<div></div>
+					<div className="flex justify-around  pb-10">
+						<p className="text-2xl text-white font-bold">{translation.deliveryCostName}</p>
+						<p className="text-2xl text-accent font-bold">{translation.deliveryCostPrice}</p>
+					</div>
+					<p className="text-center pb-5">
+						{translation.driverInfo}
+					</p>
+					<p className="text-center">
+						{translation.takeaway}
+					</p>
+					
+				</div>
 			</section>
 		</section>
 	);
