@@ -15,9 +15,10 @@ module.exports = {
 				title: "#FFD41A",
 				nav: "#7cb083",
 				accent: "#c42e15",
-				primary: "#282B1B",
+				primary: "#111d13",
 				secondary: "#525548",
 				tertiary: "#E2F4D1",
+				
 				
 			},
 			fontFamily: {

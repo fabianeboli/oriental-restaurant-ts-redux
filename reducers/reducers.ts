@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { combineReducers, createStore } from "redux";
 import language from "./language.ts";
 import menu from "./menu.ts";
 import sideDrawer from "./sideDrawer.ts";
@@ -15,4 +15,6 @@ const reducers = combineReducers({
 	menu,
 });
 
-export default reducers;
+export const store = createStore(reducers);
+
+

@@ -1,15 +1,13 @@
 import { Provider } from "react-redux";
 import { useState, useRef, useEffect } from "react";
-import { createStore } from "redux";
 import Contact from "../components/Contact/Contact.tsx";
 import LandingPage from "../components/LandingPage.tsx";
 import Menu from "../components/Menu.tsx";
 import Navbar from "../components/Navbar.tsx";
 import SideLanguage from "../components/SideDrawer/SideLanguage.tsx";
 import SideMenu from "../components/SideDrawer/SideMenu.tsx";
-import reducers from "../reducers/reducers.ts";
+import { store } from "../reducers/reducers.ts";
 
-const store = createStore(reducers);
 // !TODO add icons to navigation near categories
 // !FIX category should automatically change when changing language
 // !TODO add animations
