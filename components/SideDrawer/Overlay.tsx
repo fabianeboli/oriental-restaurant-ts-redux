@@ -7,12 +7,11 @@ interface IOverlay {
 }
 
 const Overlay = ({ children, visible, dispatch }: IOverlay) => {
-	const isVisible = visible
-		? "bg-opacity-60 bg-gray-700 "
-		: "invisible";
+	const isVisible = visible ? "bg-opacity-60 bg-gray-700 " : "invisible";
 
 	return (
 		<div
+			id="overlay"
 			className={`delay-100 duration-500 z-10 fixed left-0 top-0 w-full h-full ${isVisible}`}
 			onClick={dispatch}
 		>

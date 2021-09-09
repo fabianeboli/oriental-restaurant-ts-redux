@@ -9,7 +9,7 @@ export interface IReducers {
 	menu: any;
 }
 
-const reducers = combineReducers({
+export const reducers = combineReducers({
 	language,
 	sideDrawer,
 	menu,
